@@ -1,0 +1,274 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<aside id="colorlib-hero">
+    <div class="flexslider">
+        <ul class="slides">
+           <li style="background-image: url('static/images/scholarship.jpg');">
+               <div class="overlay"></div>
+               <div class="container-fluid">
+                   <div class="row">
+                       <div class="col-sm-6 offset-sm-3 text-center slider-text">
+                           <div class="slider-text-inner">
+                               <div class="desc">
+                                   <h1 class="head-1">Men's</h1>
+                                   <h2 class="head-2">Shoes</h2>
+                                   <h2 class="head-3">Collection</h2>
+                                   <p class="category"><span>New trending shoes</span></p>
+                                   <p><a href="#" class="btn btn-primary">Shop Collection</a></p>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+            </div>
+        </div>
+        
+<div class="colorlib-product">
+    <div class="container">
+        <div class="row">
+            <div class=" col-sm-8 offset-sm-2 text-center colorlib-heading">
+                <h2> <a href=""> <u>Top Scholarships</u> </a> </h2>
+            </div>
+        </div>
+        <div class="col-md-12">
+        {% for i in List %}
+        <div class="review">
+            <div class="user-img" ">
+                <a href="?i={{i.id}}">
+            <img src="{{i.image.url}}"  style="display: ;width: 80px;
+            height: 80px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            border-radius: 50%;
+            float: left; }" alt=""></a></div>
+            <div class="desc">
+                <h4>
+                    <span class="" style="text-align: center;"><span style="color: rgb(26, 5, 96);">Title   ;   </span><a href="?i={{i.id}}"><u>{{i.sponsor}}</u></a> </span>
+                    <br>
+                    <span class="text-right" style="text-align: left;"> <span style="color: rgb(3, 108, 3);"> Posted on;</span> {{i.start}}</span>
+                    <br>
+                    <span class="text-right" style="text-align: right;"> <span style="color: rgb(196, 0, 0);">Expiration date;</span> {{i.expire}}</span>
+                </h4>
+                
+                <p>{{i.details}}
+                    <br />{{i.summary}}<a href="?i={{i.id}}" class="btn btn-primary" style="background-color: rgb(92, 172, 92);">Apply Now</a> </p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</div> 
+	<!-- Blog Page -->
+	<div class="blog__single__page">
+		<div class="blog__slider">
+			<div class="blog__slider__item">
+				<img src="{% static 'img/1.jpg' %}" alt="">
+			</div>
+			<div class="blog__slider__item">
+				<img src="{% static 'img/2.jpg' %}" alt="">
+			</div>
+			<div class="blog__slider__item">
+				<img src="{% static 'img/3.jpg' %}" alt="">
+			</div>
+		</div>
+	</div>
+	<!-- Blog Page end -->
+<style>
+    /*-------------------
+   Blog Single Page
+ --------------------*/
+.blog__slider {
+    padding: 70px 0 60px;
+    @media #{$small_mobile} {
+        padding: 30px 0 60px;
+    }
+    .slick-track {
+        margin-left: 380px;
+        @media #{ $tab_device } {
+            margin-left: 250px;
+        }
+        @media #{ $large_mobile, $small_mobile } {
+            margin-left: 0
+        }
+    }
+}
+
+.blog__slider__item {
+    outline: none;
+    padding: 0 3px;
+}
+
+.blog__container {
+    max-width: 1000px;
+    padding: 0 15px; 
+    margin: 0 auto 30px;
+    p {
+        font-size: 18px;
+    }
+    h4 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+}
+
+.blog__header {
+    text-align: center;
+}
+
+.blog__cata {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 13px;
+    border-radius: 2px;
+    color: $white_color;
+    background: $primary_color;
+    margin-bottom: 20px;
+}
+
+.blog__single__title {
+    font-size: 44px;
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+.blog__metas {
+    margin-bottom: 30px;
+    .blog__meta {
+        position: relative;
+        display: inline-block;
+        margin-right: 18px;
+        margin-bottom: 5px;
+        padding-right: 20px;
+        font-size: 14px;
+        color: $p_color;
+        &:after {
+            position: absolute;
+            content: "|";
+            font-size: 14px;
+            right: 0;
+            top: 0;
+            color: $p_color;
+        }
+        &:last-child {
+            margin-right: 0;
+            padding-right: 0;
+            &:after {
+                display: none;
+            }
+        }
+    }
+}
+
+.blog__article {
+    blockquote {
+        max-width: 1170px;
+        margin: 50px auto;
+        padding: 45px 45px 55px;
+        background-color: #EAEFE5;
+        background-image: url("../img/blog-single/quote.png");
+        background-repeat: no-repeat;
+        background-position: right 60px bottom -10px;
+        p {
+            color: $heading_color;
+            font-size: 20px;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+        h4 {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        h5 {
+            font-size: 14px;
+            text-transform: uppercase;
+            color: $primary_color;
+            letter-spacing: 2px;
+        }
+    }
+}
+
+.blog__banner {
+    max-width: 1170px;
+    margin: 0 auto;
+    img {
+        min-width: 100%;
+    }
+}
+
+
+    /*-------------------
+   Blog Single Page
+ --------------------*/
+
+.blog__slider {
+	padding: 70px 0 60px;
+}
+
+@media (max-width: 576px) {
+	.blog__slider {
+		padding: 30px 0 60px;
+	}
+}
+
+.blog__slider .slick-track {
+	margin-left: 380px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.blog__slider .slick-track {
+		margin-left: 250px;
+	}
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px),
+(max-width: 576px) {
+	.blog__slider .slick-track {
+		margin-left: 0;
+	}
+}
+
+.blog__slider__item {
+	outline: none;
+	padding: 0 3px;
+}
+
+</style>
+<script>
+    /*-------------------
+		Blog Slider
+	-------------------*/
+	$('.blog__slider').slick({
+		dots: false,
+		infinite: true,
+		speed: 300,
+		arrows: false,
+		centerMode: true,
+		centerPadding: '190px',
+		slidesToShow: 2,
+		autoplay: true,
+		pauseOnHover:false,
+		responsive: [
+			{
+				breakpoint: 991,
+				settings: {
+				centerPadding: '0',
+				slidesToShow: 2,
+				slidesToScroll: 2
+				}
+			},
+			{
+				breakpoint: 480,
+				settings: {
+					centerMode: false,
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					centerPadding: '0',
+				}
+			}
+		]
+	});
+</script>
+{% endblock %}
