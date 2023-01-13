@@ -11,7 +11,7 @@ class Scholarship(models.Model):
 	start =models.DateTimeField()
 	expire =models.DateTimeField()
 	def __str__(self):
-		return self.school
+		return self.sponsor
 
 class Form1(models.Model):
 	name =models.CharField(max_length=100)
