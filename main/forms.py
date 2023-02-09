@@ -14,8 +14,8 @@ class Formstwo(forms.ModelForm):
 class Formthree(forms.ModelForm):
 	class Meta:
 		model=Form2
-		fields=('file','last_level_of_studying','number_of_children_in_the_family','number_of_family_members','Family_total_income_level',)
+		fields=('Cv','last_level_of_studying',)
 class Formfour(forms.ModelForm):
 	class Meta:
 		model=Form2
-		fields=('letter_to_manager',)
+		fields=('letter_to_employer',)

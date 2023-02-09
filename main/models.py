@@ -31,14 +31,10 @@ class Level(models.Model):
 		return self.name
 
 class Form2(models.Model):
-	file =models.FileField(blank=True,null=True)
+	Cv =models.FileField(blank=True,null=True)
 	last_level_of_studying=models.ForeignKey(Level,
                                 on_delete=models.CASCADE)
-	letter_to_manager=models.TextField(max_length=1000)
-	number_of_children_in_the_family =models.CharField(max_length=100)
-	number_of_family_members =models.CharField(max_length=100)
-	Family_total_income_level=models.ForeignKey(Income,
-                                on_delete=models.CASCADE)
+	letter_to_employer=models.TextField(max_length=1000)
 	def __str__(self):
 		return self.name
 
